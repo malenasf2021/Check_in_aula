@@ -18,7 +18,7 @@ public class CheckInGUI {
         ventana.setLayout(new BorderLayout());
 
         // Panel central con campos
-        final JPanel panel = new JPanel(new GridLayout(4, 2));
+        final JPanel panel = new JPanel(new GridLayout(4, 2));//4 filas, 2 columnas
         final JTextField nombreF = new JTextField();
         final JTextField documentoF = new JTextField();
         final JComboBox<String> cursoB = new JComboBox<>(new String[]{"Prog 1", "Prog 2", "Bases de Datos"});
@@ -31,6 +31,7 @@ public class CheckInGUI {
         panel.add(new JLabel("Curso:")); panel.add(cursoB);
         panel.add(new JLabel("Fecha de registro:")); panel.add(fechaField);
 
+        //situados arriba
         ventana.add(panel, BorderLayout.NORTH);
 
         // Área para mostrar inscripciones
@@ -46,6 +47,8 @@ public class CheckInGUI {
         botonesPanel.add(registrarBtn);
         botonesPanel.add(listarBtn);
         botonesPanel.add(buscarBtn);
+        
+        //situados abajo
         ventana.add(botonesPanel, BorderLayout.SOUTH);
 
         // Botón Registrar
