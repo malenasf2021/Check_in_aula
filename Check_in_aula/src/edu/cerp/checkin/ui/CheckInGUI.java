@@ -44,9 +44,13 @@ public class CheckInGUI {
         final JButton registrarBtn = new JButton("Registrar");
         final JButton listarBtn = new JButton("Listar");
         final JButton buscarBtn = new JButton("Buscar");
+        final JButton salirBtn = new JButton("Salir");
+       
         botonesPanel.add(registrarBtn);
         botonesPanel.add(listarBtn);
         botonesPanel.add(buscarBtn);
+        botonesPanel.add(salirBtn);
+        
         
         //situados abajo
         ventana.add(botonesPanel, BorderLayout.SOUTH);
@@ -94,6 +98,22 @@ public class CheckInGUI {
                       .append(i.getFechaHora()).append("\n");
                 }
                 listaArea.setText(sb.toString());
+            }
+        });
+        
+        // Botón Salir
+        salirBtn.addActionListener(e -> {
+            
+            //Cuadro de diálogo
+            int confirm = JOptionPane.showConfirmDialog(
+                ventana, //ventana padre
+                "Confirmar salida", //mensaje
+                "Salir", //Nombre d ela ventana
+                JOptionPane.YES_NO_OPTION //el cuadro de diálogo tien los botones si y no
+            );
+            if (confirm == JOptionPane.YES_OPTION) { //si el ususario escribe si
+                ventana.dispose(); // cierra la ventana
+                System.exit(0);    // termina el programa
             }
         });
 
